@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_mvi_test/src/presentation/home/viewmodel/home_viewmodel/home_viewmodel.dart';
+import 'package:flutter_mvi_test/src/presentation/home/viewmodel/viewmodel.dart';
 import 'package:flutter_mvi_test/src/utils/routes/app_routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
