@@ -1,5 +1,5 @@
-import 'package:flutter_mvi_test/src/domain/usecases/home/add_data_usecase.dart';
-import 'package:flutter_mvi_test/src/domain/usecases/home/get_age_usecase.dart';
+import 'package:flutter_mvi_test/src/domain/usecases/home/add_data.dart';
+import 'package:flutter_mvi_test/src/domain/usecases/home/get_age.dart';
 import 'package:flutter_mvi_test/src/presentation/core/base_viewmodel.dart';
 import 'package:injectable/injectable.dart';
 
