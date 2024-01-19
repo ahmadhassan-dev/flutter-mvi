@@ -1,2 +1,4 @@
+# for enablind provider information in devtools
+
 extensions:
   - provider: true
