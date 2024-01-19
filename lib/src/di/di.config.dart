@@ -9,28 +9,23 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:dio/dio.dart' as _i4;
-import 'package:flutter_mvi_test/src/data/datasources/local_data_source/local_data_source.dart'
-    as _i10;
-import 'package:flutter_mvi_test/src/data/datasources/local_data_source/local_data_source_imp.dart'
-    as _i11;
-import 'package:flutter_mvi_test/src/data/datasources/remote_data_source/remote_data_source.dart'
-    as _i12;
-import 'package:flutter_mvi_test/src/data/datasources/remote_data_source/remote_data_source_imp.dart'
-    as _i13;
-import 'package:flutter_mvi_test/src/data/repository/repository_imp.dart'
-    as _i15;
+import 'package:flutter_mvi_test/src/data/local/I_local.dart' as _i10;
+import 'package:flutter_mvi_test/src/data/local/local.dart' as _i11;
+import 'package:flutter_mvi_test/src/data/remote/I_remote.dart' as _i12;
+import 'package:flutter_mvi_test/src/data/remote/remote.dart' as _i13;
+import 'package:flutter_mvi_test/src/data/repository/repository.dart' as _i15;
 import 'package:flutter_mvi_test/src/di/register_modules.dart' as _i18;
 import 'package:flutter_mvi_test/src/domain/repository/repository.dart' as _i14;
 import 'package:flutter_mvi_test/src/domain/usecases/home/add_data_usecase.dart'
     as _i16;
 import 'package:flutter_mvi_test/src/domain/usecases/home/get_age_usecase.dart'
     as _i5;
-import 'package:flutter_mvi_test/src/framework/network_calls/base_network_call.dart'
-    as _i9;
-import 'package:flutter_mvi_test/src/framework/network_calls/custom_error_handler.dart'
-    as _i3;
-import 'package:flutter_mvi_test/src/presentation/home/viewmodel/home_viewmodel/home_viewmodel.dart'
+import 'package:flutter_mvi_test/src/presentation/home/viewmodel/viewmodel.dart'
     as _i17;
+import 'package:flutter_mvi_test/src/remote/network_calls/base_network_call.dart'
+    as _i9;
+import 'package:flutter_mvi_test/src/remote/network_calls/custom_error_handler.dart'
+    as _i3;
 import 'package:flutter_mvi_test/src/services/isar_services.dart' as _i7;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
@@ -52,7 +47,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i3.CustomErrorHandler>(
         () => _i3.CustomErrorHandlerImpl());
     gh.lazySingleton<_i4.Dio>(() => registerModule.dio);
-    gh.lazySingleton<_i5.GetAgeUseCase>(() => _i5.GetAgeUseCase());
+    gh.factory<_i5.IGetAge>(() => _i5.GetAge());
     await gh.factoryAsync<_i6.Isar>(
       () => registerModule.isar,
       preResolve: true,
@@ -75,11 +70,10 @@ extension GetItInjectableX on _i1.GetIt {
           remoteDataSource: gh<_i12.IRemoteDataSource>(),
           localDataSource: gh<_i10.ILocalDataSource>(),
         ));
-    gh.lazySingleton<_i16.AddDataUsecase>(
-        () => _i16.AddDataUsecase(gh<_i14.IRepository>()));
-    gh.lazySingleton<_i17.HomeViewModel>(() => _i17.HomeViewModel(
-          getAgeUseCase: gh<_i5.GetAgeUseCase>(),
-          addDataUsecase: gh<_i16.AddDataUsecase>(),
+    gh.factory<_i16.IAddData>(() => _i16.AddData(gh<_i14.IRepository>()));
+    gh.factory<_i17.HomeViewModel>(() => _i17.HomeViewModel(
+          getAgeUseCase: gh<_i5.IGetAge>(),
+          addData: gh<_i16.IAddData>(),
         ));
     return this;
   }

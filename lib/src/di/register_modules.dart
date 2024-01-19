@@ -1,10 +1,9 @@
+import 'package:flutter_mvi_test/src/data/local/model/user_schema.dart';
 import 'package:logger/logger.dart';
 import 'package:injectable/injectable.dart';
 import 'package:dio/dio.dart';
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
-
-import '../data/datasources/local_data_source/model/user_schema.dart';
 
 @module
 abstract class RegisterModule {

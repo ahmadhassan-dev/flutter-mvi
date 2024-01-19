@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_mvi_test/src/presentation/home/viewmodel/home_viewmodel/home_actions.dart';
-import 'package:flutter_mvi_test/src/presentation/home/viewmodel/home_viewmodel/home_state.dart';
-import 'package:flutter_mvi_test/src/presentation/home/viewmodel/home_viewmodel/home_viewmodel.dart';
+import 'package:flutter_mvi_test/src/presentation/home/model/home_actions.dart';
+import 'package:flutter_mvi_test/src/presentation/home/model/home_state.dart';
+import 'package:flutter_mvi_test/src/presentation/home/viewmodel/viewmodel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
