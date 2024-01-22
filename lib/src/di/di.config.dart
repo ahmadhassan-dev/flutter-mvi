@@ -18,8 +18,7 @@ import 'package:flutter_mvi_test/src/di/register_modules.dart' as _i18;
 import 'package:flutter_mvi_test/src/domain/repository/repository.dart' as _i14;
 import 'package:flutter_mvi_test/src/domain/usecases/home/add_data.dart'
     as _i16;
-import 'package:flutter_mvi_test/src/domain/usecases/home/get_age.dart'
-    as _i5;
+import 'package:flutter_mvi_test/src/domain/usecases/home/get_age.dart' as _i5;
 import 'package:flutter_mvi_test/src/presentation/home/viewmodel/viewmodel.dart'
     as _i17;
 import 'package:flutter_mvi_test/src/remote/network_calls/base_network_call.dart'
